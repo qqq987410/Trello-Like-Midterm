@@ -1,0 +1,59 @@
+.outerContainer {
+  width: 200px;
+  height: 80px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  .addLists {
+    width: 100px;
+    height: 30px;
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bolder;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .innerContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    input {
+      width: 100px;
+    }
+    .btnContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0 10px;
+      .addList,
+      .cancel {
+        width: 80px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bolder;
+        color: #fff;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .addList {
+        background: red;
+        margin-right: 5px;
+      }
+      .cancel {
+        background: black;
+      }
+    }
+  }
+}

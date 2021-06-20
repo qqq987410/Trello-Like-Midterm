@@ -1,0 +1,49 @@
+.footer {
+  .addCardBtn {
+    height: 30px;
+    background: linear-gradient(#fff5de 5%, #ffda82 50%, #ffc500 90%);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 80%;
+  }
+  .btnContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    .addCard,
+    .cancel {
+      width: 80px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 8px;
+      font-weight: bolder;
+      color: #fff;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .addCard {
+      background: red;
+      margin-right: 5px;
+    }
+    .cancel {
+      background: black;
+    }
+  }
+}
