@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from '../styles/History.module.scss';
-import Cards from '../components/Cards.jsx';
-import Footer from '../components/Footer.jsx';
+import Cards from './Cards.jsx';
+import Footer from './Footer.jsx';
 import { cardsContext } from '../utils/createContext.js';
 
 function History({ historyList }) {

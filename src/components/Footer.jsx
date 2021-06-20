@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
 import styles from '../styles/Footer.module.scss';
-import { stateContext, cardsContext } from '../utils/createContext';
+import { cardsContext } from '../utils/createContext';
 
-function Footer({ key }) {
+function Footer() {
   const [isShowInputWrapper, setIsShowInputWrapper] = useState(false);
-  const { detailInput, setDetailInput } = useContext(stateContext);
+  const [detailInput, setDetailInput] = useState('');
   const { cards, setCards } = useContext(cardsContext);
 
   const changeHandler = (e) => {

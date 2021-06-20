@@ -1,14 +1,13 @@
 import styles from '../styles/App.module.scss';
 import React, { useState } from 'react';
-import AddLists from '../components/AddList.jsx';
-import History from '../components/History.jsx';
+import AddLists from './AddList.jsx';
+import History from './History.jsx';
 import { stateContext } from '../utils/createContext.js';
 // import { nanoid } from 'nanoid';
 
 function App() {
   const [showPlusBtn, setShowPlusBtn] = useState(true);
   const [input, setInput] = useState('');
-  const [detailInput, setDetailInput] = useState('');
   const [historyLists, setHistoryLists] = useState([]);
 
   const contextValue = {
@@ -16,8 +15,6 @@ function App() {
     setShowPlusBtn,
     input,
     setInput,
-    detailInput,
-    setDetailInput,
     historyLists,
     setHistoryLists,
   };
