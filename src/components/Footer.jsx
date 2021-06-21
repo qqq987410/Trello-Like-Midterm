@@ -1,11 +1,12 @@
-import { useState, useContext } from 'react';
 import styles from '../styles/Footer.module.scss';
-import { cardsContext } from '../utils/createContext';
+import { useState, useContext } from 'react';
+import { stateContext } from '../utils/createContext';
+import { nanoid } from 'nanoid';
 
-function Footer() {
+function Footer({ id }) {
   const [isShowInputWrapper, setIsShowInputWrapper] = useState(false);
   const [detailInput, setDetailInput] = useState('');
-  const { cards, setCards } = useContext(cardsContext);
+  const { historyLists, setHistoryLists } = useContext(stateContext);
 
   const changeHandler = (e) => {
     setDetailInput(e.target.value);
@@ -15,7 +16,13 @@ function Footer() {
   };
   const addCardHandler = () => {
     if (detailInput !== '') {
-      setCards([...cards, detailInput]);
+      const newHistoryLists = historyLists.map((historyObj) => {
+        if (historyObj.id === id) {
+          historyObj.detail.push({ id: nanoid(), content: detailInput });
+        }
+        return historyObj;
+      });
+      setHistoryLists(newHistoryLists);
       setDetailInput('');
     }
   };

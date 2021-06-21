@@ -1,9 +1,8 @@
 import styles from '../styles/App.module.scss';
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { stateContext } from '../utils/createContext.js';
 import AddLists from './AddList.jsx';
 import History from './History.jsx';
-import { stateContext } from '../utils/createContext.js';
-// import { nanoid } from 'nanoid';
 
 function App() {
   const [showPlusBtn, setShowPlusBtn] = useState(true);
@@ -22,8 +21,8 @@ function App() {
   return (
     <stateContext.Provider value={contextValue}>
       <div className={styles.App}>
-        {historyLists.map((historyList, index) => (
-          <History key={index} historyList={historyList} />
+        {historyLists.map((history) => (
+          <History key={history.id} history={history} />
         ))}
         <AddLists />
       </div>

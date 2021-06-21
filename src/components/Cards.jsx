@@ -1,17 +1,20 @@
-import { useContext } from 'react';
 import styles from '../styles/Cards.module.scss';
-import { cardsContext } from '../utils/createContext.js';
+import { useContext } from 'react';
+import { stateContext } from '../utils/createContext.js';
 
-function Cards() {
-  const { cards } = useContext(cardsContext);
+function Cards({ id }) {
+  const { historyLists } = useContext(stateContext);
+  const { detail } = historyLists.find((item) => item.id === id);
 
   return (
     <div className={styles.cardsContainer}>
-      {cards.map((detail, index) => (
-        <div className={styles.card} key={index}>
-          {detail}
-        </div>
-      ))}
+      {detail.map((card) => {
+        return (
+          <div className={styles.card} key={card.id}>
+            {card.content}
+          </div>
+        );
+      })}
     </div>
   );
 }

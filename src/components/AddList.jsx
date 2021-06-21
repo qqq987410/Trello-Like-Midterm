@@ -1,6 +1,7 @@
-import { useContext } from 'react';
 import styles from '../styles/AddLists.module.scss';
+import { useContext } from 'react';
 import { stateContext } from '../utils/createContext.js';
+import { nanoid } from 'nanoid';
 
 function AddLists() {
   const { input, showPlusBtn, setShowPlusBtn, setInput, setHistoryLists } = useContext(stateContext);
@@ -13,7 +14,7 @@ function AddLists() {
   };
   const addListHandler = () => {
     if (input !== '') {
-      const newTitle = { title: input, detail: [] };
+      const newTitle = { id: nanoid(), title: input, detail: [] };
       setHistoryLists((prevState) => [...prevState, newTitle]);
       setInput('');
     }
