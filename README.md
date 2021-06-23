@@ -6,4 +6,4 @@
 
 #### Demo
 
-![image](https://github.com/qqq987410/Trello-Like-Midterm/blob/master/demo.gif)
+![image](https://github.com/qqq987410/Trello-Like-Midterm/blob/master/public/images/demo.gif)
